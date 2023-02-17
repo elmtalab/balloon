@@ -42,7 +42,7 @@
 			// user-defined function invoked after finishing the BART
 			var myend = function() {
 				var points = 0;
-				for(var i = 1; i <= 5; i++) { // run over all balloons
+				for(var i = 1; i <= 10; i++) { // run over all balloons
 					if(Number($('#expl' + i).attr('value')) == 0) {
 						points = points + Number($('#pump' + i).attr('value')) // get information saved to the hidden form element
 						result_successful["expl"+i] =Number($('#pump' + i).attr('value'))
@@ -60,7 +60,7 @@
 				
 			}
 		
-			// create a BART with 5 balloons
+			// create a BART with 10 balloons
 			$("#bart").bart( { b: 10,                       // create 5 balloons
 					   o: { color: 'green',        // color of balloons
 						earnings: 1,           // points earned for each pump
