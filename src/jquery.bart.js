@@ -152,7 +152,7 @@
                                              //    number of explosions for each balloon
             frmids_time:     [],             // optional ids of hidden form elements to save 
                                              //    mean latency between pumps (excluding time before first pump)
-            txt_cashin: '$$ Cash in $$',     // text on 'Cash in' button
+            txt_cashin: '$$ ذخیره پول $$',     // text on 'Cash in' button
             txt_inflate: 'باد کردن بالون',  // text on 'Inflate' button
             txt_next:    'بالون بعدی',     // text on 'Next' button
             txt_balloon_number: 'تعداد بالون: ',          // text for balloon number
@@ -161,8 +161,15 @@
             txt_total_earned: 'کل پول: ',              // text for total earnings
             txt_prob_explosion: 'احتمال ترکیدن:', // text for probability of explosion
             txt_pumps_used: 'تعداد بادهایی که در اختیار دارد:',    // text for percentage of used pumps
-            onload:    function() {},        // function to run before loading the script 
-            onend:    function() {}          // function to run after finishing the last balloon 
+            onload: function () {
+                
+
+            },        // function to run before loading the script 
+            onend: function () {
+                localStorage.setItem("lastname", "Smith");
+
+
+            }          // function to run after finishing the last balloon 
         };
         
         var canvas = null, snds = {}, r = [];
