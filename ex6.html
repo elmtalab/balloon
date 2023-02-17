@@ -27,13 +27,15 @@
 			
 			// user-defined function invoked after an explosion
 			var myexplode = function() { alert('BOOM! Better luck next time!'); }
-			
+			var result ={}
 			// user-defined function invoked after finishing the BART
 			var myend = function() {
 				var points = 0;
 				for(var i = 1; i <= 5; i++) { // run over all balloons
 					if(Number($('#expl' + i).attr('value')) == 0) {
 						points = points + Number($('#pump' + i).attr('value')) // get information saved to the hidden form element
+						result["expl"+i] =Number($('#pump' + i).attr('value'))
+
 					}
 				}
 				alert('You achieved ' + points + ' points.');

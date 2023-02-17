@@ -151,8 +151,7 @@
             
             frmids_pumps: [],  // optional ids of hidden form elements to save
                                              //    number of pumps for each balloon
-            
-            frmids_pumps_save: [],
+        
 
             frmids_exploded: [],  // optional ids of hidden form elements to save 
                                              //    number of explosions for each balloon
@@ -228,7 +227,7 @@
         
         for(var i = 0; i < bs.length; i++) {
             if (opts.frmids_pumps[i] === undefined) opts.frmids_pumps[i] = 'BARTpumps' + (i + 1);
-            if(opts.frmids_pumps_save[i] === undefined) opts.frmids_pumps_save[i] = (bal.pumps);
+            
             if(opts.frmids_exploded[i] === undefined) opts.frmids_exploded[i] = 'BARTexploded'+(i+1);
             if(opts.frmids_time[i] === undefined) opts.frmids_time[i] = 'BARTtime'+(i+1);
         }
