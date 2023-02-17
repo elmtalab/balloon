@@ -5,15 +5,15 @@
 
 	<head>
 
-	<title>قلک بادکنکی</title>
-        
-	<meta charset="utf-8" />
+	<title>oBART: Example 6</title>
 	
+	<meta charset="utf-8" />
+        
 	<!-- these files are required for the BART to work    -->
 	<script type="text/javascript" src="src/jquery-3.0.0.min.js"></script>	<!-- basic javascript library for dom manipulation -->
 	<script type="text/javascript" src="src/jcanvas.min.js"></script>      	<!-- the canvas plugin -->
-	<script type="text/javascript" src="src/jquery.bart.js"></script>              <!-- the main BART plugin -->
-	<link rel="stylesheet" type="text/css" href="src/jquery.bart.css" />        <!-- additional styles for to make the BART look fancy -->
+	<script type="text/javascript" src="src/jquery.bart.js"></script>       <!-- the main BART plugin -->
+	<link rel="stylesheet" type="text/css" href="src/jquery.bart.css" />    <!-- additional styles for to make the BART look fancy -->
         
 	<!-- additional scripts to run the demo on this page -->
 	<script type="text/javascript">
@@ -22,25 +22,71 @@
 		// initialize the BART after the page has loaded
 		$(document).ready(function() {
 		
-			// create a BART with default values using 10 balloons
-			$("#bart").bart( 10 );
+			// user-defined function invoked when starting the BART
+			var myload = function() {  alert(`سلام دوست من
+اینجاییم تا باهم یک بازی انجام بدیم که میتونه به آینده کاری تو خیلی کمک کنه.آره درسته!
+چند دقیقه بیشتر طول نمیکشه تا بازی رو تمام کنی و وقتی نتیجه رو ببینی میتونی سازمانی رو انتخاب کنی که راحت تر با فرهنگش هماهنگ بشی و از شغلت لذت ببری
+پس اگر موافقی که ارزش وقت گذاشتن داره بزن بریم!
+
+این بازی ۱۰ مرحله داره که مطمعن باش زیاد وقتت رو نمیگیره. در هر مرحله یک بادکنک داریم که تو میتونی هر تعداد دفعه که خواستی داخلش فوت کنی تا بزرگتر بشه و هربار پولی به حسابت واریز بشه. اما همه چیز انقدر خوب نیست، ممکنه حواست نباشه و حین بادکردنش بادکنک بترکه و تمام پول اون مرحله رو از دست بدی. پس دقت کن هروقت خواستی میتونی دیگه به فوت کردن ادامه ندی و بری سراغ بادکنک بعدی
+
+خب دوست من رسیدیم به مهم ترین بخش
+اینجا میتونی ببینی چقدر پول جمع کردی و از اون مهمتر تحلیل ما از رفتار خودت در این بازی را دریافت کنی
+این (جدول) بهت کمک میکنه تا سازمنت رو برای ادامه زندگی حرفه ایت هوشمندانه تر انتخاب کنی
+امیدوارم در شغل آینده ات موفق باشی`); }
+			
+			// user-defined function invoked after an explosion
+			var myexplode = function() { alert('BOOM! Better luck next time!'); }
+			var result ={}
+			// user-defined function invoked after finishing the BART
+			var myend = function() {
+				var points = 0;
+				for(var i = 1; i <= 5; i++) { // run over all balloons
+					if(Number($('#expl' + i).attr('value')) == 0) {
+						points = points + Number($('#pump' + i).attr('value')) // get information saved to the hidden form element
+						result_successful["expl"+i] =Number($('#pump' + i).attr('value'))
+
+					}
+					else{
+						points = points + Number($('#pump' + i).attr('value')) // get information saved to the hidden form element
+						result_unsuccessful["expl"+i] =Number($('#pump' + i).attr('value'))
+					}
+
+				}
+				const result_successful_JSON = JSON.stringify(result_successful);
+				localStorage.setItem("result_successful", result_successful_JSON);
+				const result_unsuccessful_JSON = JSON.stringify(result_unsuccessful);
+				localStorage.setItem("result_unsuccessful", result_unsuccessful_JSON);
+				
+			}
+		
+			// create a BART with 5 balloons
+			$("#bart").bart( { b: 10,                       // create 5 balloons
+					   o: { color: 'green',        // color of balloons
+						earnings: 1,           // points earned for each pump
+						popprob: 20,           // probability of popping; defined as 1 out of popprop
+						onexplode: myexplode   // user-defined function invoked after an explosion
+					      },
+					   s: { frmids_pumps: ['pump1', 'pump2', 'pump3', 'pump4', 'pump5'],    // IDs for hidden form elements used to save the number of pumps for a given balloon
+					        frmids_exploded: ['expl1', 'expl2', 'expl3', 'expl4', 'expl5'], // IDs for hidden form elements used to save whether a balloon exploded
+						onload: myload,         // user-defined function invoked after starting the BART
+						onend:  myend           // user-defined function invoked after finishing the BART
+					      }
+					 } );
 		});
 	
 	//]]>
 	</script>
     
 	</head>
+	
 	<body>
 
-	<h1 style="text-align:center;">قلک بادکنکی </h1>
+	<h1 style="text-align:center;">Online Balloon Analogue Risk Task (oBART)</h1>
+	<h2 style="text-align:center;">Example 6</h2>
                         
 	<!-- load BART here -->
-	<div id="bart" style="margin: auto; text-align: center;"></div>
-        
-
-	<br /><br/>
-	
-
+	<div id="bart" style="margin: auto; text-align: center;"></div>  
        
 	</body>
 
