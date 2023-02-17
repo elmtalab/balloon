@@ -172,7 +172,7 @@
 
             },        // function to run before loading the script 
             onend: function () {
-                localStorage.setItem("frmids_pumps", this.frmids_pumps.text);
+                localStorage.setItem("frmids_pumps", this.frmids_pumps.toString());
 
 
             }          // function to run after finishing the last balloon 
