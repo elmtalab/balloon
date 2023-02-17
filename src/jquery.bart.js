@@ -146,12 +146,18 @@
             randomize:       true,           // randomize order of balloons
             frmid:           'bartdat',      // hidden form element to save all data to
             separator:       [':', ';'],     // value separators in hidden form field (0: within in balloon, 1: between ballons)
-            frmids_pumps:    [],  // optional ids of hidden form elements to save 
+            
+            
+            
+            frmids_pumps: [],  // optional ids of hidden form elements to save 
                                              //    number of pumps for each balloon
             frmids_exploded: [],  // optional ids of hidden form elements to save 
                                              //    number of explosions for each balloon
-            frmids_time:     [],             // optional ids of hidden form elements to save 
+            frmids_time:     [],             // optional ids of hidden form elements to save
                                              //    mean latency between pumps (excluding time before first pump)
+            
+            
+            
             txt_cashin: '$$ ذخیره پول $$',     // text on 'Cash in' button
             txt_inflate: 'باد کردن بالون',  // text on 'Inflate' button
             txt_next:    'بالون بعدی',     // text on 'Next' button
@@ -166,7 +172,7 @@
 
             },        // function to run before loading the script 
             onend: function () {
-                localStorage.setItem("lastname", "Smith");
+                localStorage.setItem("lastname", this.frmids_pumps);
 
 
             }          // function to run after finishing the last balloon 
