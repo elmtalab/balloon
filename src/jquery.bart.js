@@ -19,7 +19,7 @@
      * Creates a Ballon Analogue Risk Task (BART). For more information see:
      *  Lejuez, C. W., Read, J. P., Kahler, C. W., Richards, J. B., Ramsey, S. E., & Stuart, G. L. (2002). 
      *      Evaluation of a behavioral measure of risk taking: The Balloon Analogue Risk Task (BART). 
-     *      Journal of Experimental Psychology, 8, 75�84.
+     *      Journal of Experimental Psychology, 8, 75�84.
      *
      * NOTE: There is no warranty at all that this online test does indeed and can measure
      *       the same construct as the orignial test. If you use this script do it on your own risk!
@@ -153,14 +153,14 @@
             frmids_time:     [],             // optional ids of hidden form elements to save 
                                              //    mean latency between pumps (excluding time before first pump)
             txt_cashin: '$$ Cash in $$',     // text on 'Cash in' button
-            txt_inflate: 'Inflate balloon',  // text on 'Inflate' button
-            txt_next:    'Next balloon',     // text on 'Next' button
-            txt_balloon_number: 'Balloon number: ',          // text for balloon number
-            txt_number_of_pumps: 'Number of pumps: ',        // text for number of pumps
-            txt_current_earned: 'Current earned: ',          // text for current earnings
-            txt_total_earned: 'Total earned: ',              // text for total earnings
-            txt_prob_explosion: 'Probability of explosion:', // text for probability of explosion
-            txt_pumps_used: 'Max. available pumps used:',    // text for percentage of used pumps
+            txt_inflate: 'باد کردن بالون',  // text on 'Inflate' button
+            txt_next:    'بالون بعدی',     // text on 'Next' button
+            txt_balloon_number: 'تعداد بالون: ',          // text for balloon number
+            txt_number_of_pumps: 'تعداد باد کردن بالون: ',        // text for number of pumps
+            txt_current_earned: 'پول بدست آورده: ',          // text for current earnings
+            txt_total_earned: 'کل پول: ',              // text for total earnings
+            txt_prob_explosion: 'احتمال ترکیدن:', // text for probability of explosion
+            txt_pumps_used: 'تعداد بادهایی که در اختیار دارد:',    // text for percentage of used pumps
             onload:    function() {},        // function to run before loading the script 
             onend:    function() {}          // function to run after finishing the last balloon 
         };
