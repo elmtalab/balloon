@@ -627,6 +627,8 @@
                     // update counts
                     if(opts.showpumpcount) {
                         canvas.setLayer('pumpnum', { text: opts.txt_number_of_pumps + bal.pumps });
+                        localStorage.setItem("pumps", bal.pumps);
+                        
                     }
                     if(opts.showcurrentearned) {
                         canvas.setLayer('curearn', { text: opts.txt_current_earned + 
