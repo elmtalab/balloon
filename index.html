@@ -85,11 +85,11 @@
 					if(Number($('#expl' + i).attr('value')) == 0) {
 						points = points + Number($('#pump' + i).attr('value')) // get information saved to the hidden form element
 						result_successful["expl"+i] =Number($('#pump' + i).attr('value'))
-						document.getElementById('#'+(i+1)).innerText = Number($('#pump' + i).attr('value'))
+						document.getElementById('#r'+(i+1)).innerText = Number($('#pump' + i).attr('value'))
 					}
 					else{
 						result_unsuccessful["expl"+i] =Number($('#pump' + i).attr('value'))
-						document.getElementById('#'+(i+1)).innerText = Number($('#pump' + i).attr('value'))
+						document.getElementById('#r'+(i+1)).innerText = Number($('#pump' + i).attr('value'))
 					}
 					openModalResult();
 				}
@@ -230,16 +230,16 @@ p {
 			<th>10</th>
 		</tr>
 		<tr>
-			<td id="1">Alfreds Futterkiste</td>
-			<td id="2">Maria Anders</td>
-			<td id="3">Germany</td>
-			<td id="4">Alfreds Futterkiste</td>
-			<td id="5">Maria Anders</td>
-			<td id="6">Germany</td>
-			<td id="7">Alfreds Futterkiste</td>
-			<td id="8">Maria Anders</td>
-			<td id="9">Germany</td>
-			<td id="10">Germany</td>
+			<td id="r1">Alfreds Futterkiste</td>
+			<td id="r2">Maria Anders</td>
+			<td id="r3">Germany</td>
+			<td id="r4">Alfreds Futterkiste</td>
+			<td id="r5">Maria Anders</td>
+			<td id="r6">Germany</td>
+			<td id="r7">Alfreds Futterkiste</td>
+			<td id="r8">Maria Anders</td>
+			<td id="r9">Germany</td>
+			<td id="r10">Germany</td>
 		</tr>
 		</table> 
 
