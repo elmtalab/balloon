@@ -24,8 +24,7 @@
 	const modal = document.getElementById('#modal');
 				const overlay = document.getElementById('#overlay');
 
-				const modal_result = document.getElementById('#modal_result');
-				const overlay_result = document.getElementById('#overlay_result');
+				
 
 				const btnCloseModal = document.querySelector('.close-modal');
 				const btnsOpenModal = document.querySelectorAll('.show-modal');
@@ -34,19 +33,13 @@
 					modal.classList.remove('hidden');
 					overlay.classList.remove('hidden');
 				}
-				const openModalResult = function () {
-					modal_result.classList.remove('hidden');
-					overlay_result.classList.remove('hidden');
-				}
+				
 
 				const closeModal = () => {
 					modal.classList.add('hidden');
 					overlay.classList.add('hidden');
 				}
-				const closeModalResult = () => {
-					modal_result.classList.add('hidden');
-					overlay_result.classList.add('hidden');
-				}
+				
 				btnCloseModal.addEventListener('click',closeModal);
 				overlay.addEventListener('click',closeModal);
 
@@ -59,7 +52,18 @@
 				});
 		// initialize the BART after the page has loaded
 		$(document).ready(function() {
-		
+			const modal_result = document.getElementById('#modal_result');
+				const overlay_result = document.getElementById('#overlay_result');
+
+		const openModalResult = function () {
+					modal_result.classList.remove('hidden');
+					overlay_result.classList.remove('hidden');
+				}
+
+		const closeModalResult = () => {
+					modal_result.classList.add('hidden');
+					overlay_result.classList.add('hidden');
+				}
 			// user-defined function invoked when starting the BART
 			var myload = function() {   }
 			
