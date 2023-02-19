@@ -232,7 +232,10 @@ p {
 	<!-- load BART here -->
 	<div id="bart" style="margin: auto; text-align: center;"></div>  
        	<script>
-		const modal_result = document.getElementById('#modal_result');
+
+			$(document).ready(function()
+{       
+    const modal_result = document.getElementById('#modal_result');
 		const overlay_result = document.getElementById('#overlay_result');
 		const openModalResult = function () {
 					modal_result.classList.remove('hidden');
@@ -242,6 +245,8 @@ p {
 					modal_result.classList.add('hidden');
 					overlay_result.classList.add('hidden');
 				}
+});
+		
 
 	</script>
 	</body>
