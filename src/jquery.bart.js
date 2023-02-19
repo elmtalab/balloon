@@ -1,16 +1,4 @@
-/**
- * BART - jQuery plugin for creating the a Ballon Analogue Risk Task
- *
- * @author    Timo Gnambs <timo@gnambs.at>
- * @copyright (c) 2013-2016 Timo Gnambs (http://timo.gnambs.at)
- * @license   Dual licensed under the MIT and GPL licenses:
- *              http://www.opensource.org/licenses/mit-license.php
- *              http://www.gnu.org/licenses/gpl.html
- * @requires  jQuery v3.0.0
- * @requires  jCanvas v16.06.06
- * @version   2013-05-08
- * @changelog: - 2016-06-27:	updated to jQuery v3.0.0 and jCanvas v16.06.06
- */
+
 
 
 (function($) {

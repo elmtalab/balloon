@@ -51,31 +51,35 @@
 			}
 
 
-				const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.close-modal');
-const btnsOpenModal = document.querySelectorAll('.show-modal');
+				const modal = document.querySelector('#modal');
+				const overlay = document.querySelector('#overlay');
 
-const openModal = function () {
-    modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-}
+				const modal_result = document.querySelector('#modal_result');
+				const overlay_result = document.querySelector('#overlay_result');
 
-const closeModal = () => {
-    modal.classList.add('hidden');
-    overlay.classList.add('hidden');
-}
+				const btnCloseModal = document.querySelector('.close-modal');
+				const btnsOpenModal = document.querySelectorAll('.show-modal');
 
-btnCloseModal.addEventListener('click',closeModal);
-overlay.addEventListener('click',closeModal);
+				const openModal = function () {
+					modal.classList.remove('hidden');
+					overlay.classList.remove('hidden');
+				}
 
-document.addEventListener('keydown', function(evt) {
-    console.log(evt.key);
+				const closeModal = () => {
+					modal.classList.add('hidden');
+					overlay.classList.add('hidden');
+				}
 
-    if (evt.key === 'Escape' && !modal.classList.contains('hidden')) {
-            closeModal();
-        }
-});
+				btnCloseModal.addEventListener('click',closeModal);
+				overlay.addEventListener('click',closeModal);
+
+				document.addEventListener('keydown', function(evt) {
+					console.log(evt.key);
+
+					if (evt.key === 'Escape' && !modal.classList.contains('hidden')) {
+							closeModal();
+						}
+				});
 
 
 
@@ -172,7 +176,7 @@ p {
 }
 
 		</style>
-		<div class="modal ">
+		<div class="modal " id="#modal">
       <button class="close-modal">&times;</button>
       <h1>خوش اومدی 😍</h1>
       <p>
@@ -189,7 +193,35 @@ p {
 امیدوارم در شغل آینده ات موفق باشی
       </p>
     </div>
-    <div class="overlay "></div>
+    <div class="overlay " id="#overlay"></div>
+
+
+
+<div class="modal hidden" id="modal_result">
+      <button class="close-modal">&times;</button>
+      <h1>خوش اومدی 😍</h1>
+
+       <table>
+		<tr>
+			<th>1</th>
+			<th>2</th>
+			<th>3</th>
+		</tr>
+		<tr>
+			<td>Alfreds Futterkiste</td>
+			<td>Maria Anders</td>
+			<td>Germany</td>
+		</tr>
+		<tr>
+			<td>Centro comercial Moctezuma</td>
+			<td>Francisco Chang</td>
+			<td>Mexico</td>
+		</tr>
+		</table> 
+
+
+    </div>
+    <div class="overlay hidden" id="#overlay_result"></div>
 
 	<h1 style="text-align:center;">بادکنک ریسکی</h1>
                         
