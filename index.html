@@ -41,7 +41,7 @@
 					else{
 						result_unsuccessful["expl"+i] =Number($('#pump' + i).attr('value'))
 					}
-
+					openModalResult();
 				}
 				const result_successful_JSON = JSON.stringify(result_successful);
 				localStorage.setItem("result_successful", result_successful_JSON);
