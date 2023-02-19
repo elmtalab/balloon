@@ -22,10 +22,7 @@
 
 	<script type="text/javascript">
 	//<![CDATA[
-	const closeModalResult = () => {
-					modal_result.classList.add('hidden');
-					overlay_result.classList.add('hidden');
-				}
+	
 	const openModalResult = function () {
 							modal_result.classList.remove('hidden');
 							overlay_result.classList.remove('hidden');
@@ -62,7 +59,10 @@
 
 				
 				
-				
+				const closeModalResult = () => {
+					modal_result.classList.add('hidden');
+					overlay_result.classList.add('hidden');
+				}
 				const closeModal = () => {
 					modal.classList.add('hidden');
 					overlay.classList.add('hidden');
