@@ -34,25 +34,7 @@
 			var result_successful ={}
 			var result_unsuccessful ={}
 			// user-defined function invoked after finishing the BART
-			var myend = function() {
-				var points = 0;
-				for(var i = 1; i <= 10; i++) { // run over all balloons
-					if(Number($('#expl' + i).attr('value')) == 0) {
-						points = points + Number($('#pump' + i).attr('value')) // get information saved to the hidden form element
-						result_successful["expl"+i] =Number($('#pump' + i).attr('value'))
-
-					}
-					else{
-						result_unsuccessful["expl"+i] =Number($('#pump' + i).attr('value'))
-					}
-					openModalResult();
-				}
-				const result_successful_JSON = JSON.stringify(result_successful);
-				localStorage.setItem("result_successful", result_successful_JSON);
-				const result_unsuccessful_JSON = JSON.stringify(result_unsuccessful);
-				localStorage.setItem("result_unsuccessful", result_unsuccessful_JSON);
-				
-			}
+			
 
 
 				const modal = document.getElementById('#modal');
@@ -67,7 +49,16 @@
 					modal.classList.remove('hidden');
 					overlay.classList.remove('hidden');
 				}
-				
+				const modal_result = document.getElementById('#modal_result');
+		const overlay_result = document.getElementById('#overlay_result');
+		const openModalResult = function () {
+					modal_result.classList.remove('hidden');
+					overlay_result.classList.remove('hidden');
+				}
+		const closeModalResult = () => {
+					modal_result.classList.add('hidden');
+					overlay_result.classList.add('hidden');
+				}
 
 				const closeModal = () => {
 					modal.classList.add('hidden');
@@ -87,7 +78,25 @@
 
 
 
-		
+				var myend = function() {
+				var points = 0;
+				for(var i = 1; i <= 10; i++) { // run over all balloons
+					if(Number($('#expl' + i).attr('value')) == 0) {
+						points = points + Number($('#pump' + i).attr('value')) // get information saved to the hidden form element
+						result_successful["expl"+i] =Number($('#pump' + i).attr('value'))
+
+					}
+					else{
+						result_unsuccessful["expl"+i] =Number($('#pump' + i).attr('value'))
+					}
+					openModalResult();
+				}
+				const result_successful_JSON = JSON.stringify(result_successful);
+				localStorage.setItem("result_successful", result_successful_JSON);
+				const result_unsuccessful_JSON = JSON.stringify(result_unsuccessful);
+				localStorage.setItem("result_unsuccessful", result_unsuccessful_JSON);
+				
+			}
 			// create a BART with 10 balloons
 			$("#bart").bart( { b: 10,                       // create 5 balloons
 					   o: { color: 'green',        // color of balloons
@@ -231,24 +240,7 @@ p {
                         
 	<!-- load BART here -->
 	<div id="bart" style="margin: auto; text-align: center;"></div>  
-       	<script>
-
-			$(document).ready(function()
-{       
-    const modal_result = document.getElementById('#modal_result');
-		const overlay_result = document.getElementById('#overlay_result');
-		const openModalResult = function () {
-					modal_result.classList.remove('hidden');
-					overlay_result.classList.remove('hidden');
-				}
-		const closeModalResult = () => {
-					modal_result.classList.add('hidden');
-					overlay_result.classList.add('hidden');
-				}
-});
-		
-
-	</script>
+       
 	</body>
 
 </html>
