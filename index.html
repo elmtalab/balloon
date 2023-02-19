@@ -22,7 +22,10 @@
 
 	<script type="text/javascript">
 	//<![CDATA[
-	
+	const closeModalResult = () => {
+					modal_result.classList.add('hidden');
+					overlay_result.classList.add('hidden');
+				}
 	const openModalResult = function () {
 							modal_result.classList.remove('hidden');
 							overlay_result.classList.remove('hidden');
@@ -50,24 +53,20 @@
 
 				const btnCloseModal = document.querySelector('.close-modal');
 				const btnsOpenModal = document.querySelectorAll('.show-modal');
-				const btnCloseModalResult = document.getElementById('#modal_result_close');
+
 				const openModal = function () {
 					modal.classList.remove('hidden');
 					overlay.classList.remove('hidden');
 				}
 
 				
-				const closeModalResult = () => {
-					modal_result.classList.add('hidden');
-					overlay_result.classList.add('hidden');
-				}
+				
 				
 				const closeModal = () => {
 					modal.classList.add('hidden');
 					overlay.classList.add('hidden');
 				}
 				btnCloseModal.addEventListener('click',closeModal);
-				btnCloseModalResult.addEventListener('click',closeModalResult);
 				overlay.addEventListener('click',closeModal);
 
 				document.addEventListener('keydown', function(evt) {
@@ -213,7 +212,7 @@ p {
 
 
 <div class="modal hidden" id="modal_result">
-      <button class="close-modal" id="modal_result_close">&times;</button>
+      <button class="close-modal">&times;</button>
       <h1>خوش اومدی 😍</h1>
 
        <table>
