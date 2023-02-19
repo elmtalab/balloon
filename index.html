@@ -16,19 +16,7 @@
 	<link rel="stylesheet" type="text/css" href="src/jquery.bart.css" />    <!-- additional styles for to make the BART look fancy -->
         
 	<!-- additional scripts to run the demo on this page -->
-	<script>
-		const modal_result = document.getElementById('#modal_result');
-		const overlay_result = document.getElementById('#overlay_result');
-		const openModalResult = function () {
-					modal_result.classList.remove('hidden');
-					overlay_result.classList.remove('hidden');
-				}
-		const closeModalResult = () => {
-					modal_result.classList.add('hidden');
-					overlay_result.classList.add('hidden');
-				}
 
-	</script>
 
 
 
@@ -243,7 +231,19 @@ p {
                         
 	<!-- load BART here -->
 	<div id="bart" style="margin: auto; text-align: center;"></div>  
-       
+       	<script>
+		const modal_result = document.getElementById('#modal_result');
+		const overlay_result = document.getElementById('#overlay_result');
+		const openModalResult = function () {
+					modal_result.classList.remove('hidden');
+					overlay_result.classList.remove('hidden');
+				}
+		const closeModalResult = () => {
+					modal_result.classList.add('hidden');
+					overlay_result.classList.add('hidden');
+				}
+
+	</script>
 	</body>
 
 </html>
