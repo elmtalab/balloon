@@ -85,11 +85,11 @@
 					if(Number($('#expl' + i).attr('value')) == 0) {
 						points = points + Number($('#pump' + i).attr('value')) // get information saved to the hidden form element
 						result_successful["expl"+i] =Number($('#pump' + i).attr('value'))
-						document.getElementById('#'+i).innerText = Number($('#pump' + i).attr('value'))
+						document.getElementById('#'+(i+1)).innerText = Number($('#pump' + i).attr('value'))
 					}
 					else{
 						result_unsuccessful["expl"+i] =Number($('#pump' + i).attr('value'))
-						document.getElementById('#'+i).innerText = Number($('#pump' + i).attr('value'))
+						document.getElementById('#'+(i+1)).innerText = Number($('#pump' + i).attr('value'))
 					}
 					openModalResult();
 				}
