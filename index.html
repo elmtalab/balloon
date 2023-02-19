@@ -22,15 +22,15 @@
 
 	<script type="text/javascript">
 	//<![CDATA[
-	const closeModalResult = () => {
-					modal_result.classList.add('hidden');
-					overlay_result.classList.add('hidden');
-				}
+	
 	const openModalResult = function () {
 							modal_result.classList.remove('hidden');
 							overlay_result.classList.remove('hidden');
 						}
-				
+	const closeModalResult = () => {
+					modal_result.classList.add('hidden');
+					overlay_result.classList.add('hidden');
+				}
 		// initialize the BART after the page has loaded
 		$(document).ready(function() {
 		
@@ -51,9 +51,9 @@
 				const overlay_result = document.getElementById('#overlay_result');
 				
 
-				const btnCloseModal = document.querySelector('#close-modal');
+				const btnCloseModal = document.getElementById('#close-modal');
 				const btnsOpenModal = document.querySelectorAll('.show-modal');
-				const btnCloseModalResult = document.querySelector('.close-modal');
+				const btnCloseModalResult = document.getElementById('#close-modalResult');
 				const btnsOpenModalResult = document.querySelectorAll('.show-modal');
 				const openModal = function () {
 					modal.classList.remove('hidden');
@@ -69,15 +69,9 @@
 				}
 				btnCloseModal.addEventListener('click',closeModal);
 				overlay.addEventListener('click',closeModal);
-				btnCloseModalResult.addEventListener('click',closeModal);
-				overlayResult.addEventListener('click',closeModal);
-				document.addEventListener('keydown', function(evt) {
-					console.log(evt.key);
-
-					if (evt.key === 'Escape' && !modal.classList.contains('hidden')) {
-							closeModal();
-						}
-				});
+				btnCloseModalResult.addEventListener('click',closeModalResult);
+				overlay_result.addEventListener('click',closeModalResult);
+				
 
 
 
