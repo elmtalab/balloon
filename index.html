@@ -85,11 +85,11 @@
 					if(Number($('#expl' + i).attr('value')) == 0) {
 						points = points + Number($('#pump' + i).attr('value')) // get information saved to the hidden form element
 						result_successful["expl"+i] =Number($('#pump' + i).attr('value'));
-						document.getElementById('#r'+(i+1)).innerHTML = Number($('#pump' + i).attr('value'));
+						//document.getElementById('#r'+(i+1)).innerHTML = Number($('#pump' + i).attr('value'));
 					}
 					else{
 						result_unsuccessful["expl"+i] =Number($('#pump' + i).attr('value'));
-						document.getElementById('#r'+(i+1)).innerHTML = Number($('#pump' + i).attr('value'));
+						//document.getElementById('#r'+(i+1)).innerHTML = Number($('#pump' + i).attr('value'));
 					}
 					openModalResult();
 				}
