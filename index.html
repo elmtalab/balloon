@@ -49,31 +49,9 @@
 				localStorage.setItem("result_unsuccessful", result_unsuccessful_JSON);
 				
 			}
-		
-			// create a BART with 10 balloons
-			$("#bart").bart( { b: 10,                       // create 5 balloons
-					   o: { color: 'green',        // color of balloons
-						earnings: 1,           // points earned for each pump
-						popprob: 20,           // probability of popping; defined as 1 out of popprop
-						onexplode: myexplode   // user-defined function invoked after an explosion
-					      },
-					   s: { frmids_pumps: ['pump1', 'pump2', 'pump3', 'pump4', 'pump5','pump6', 'pump7', 'pump8', 'pump9', 'pump10'],    // IDs for hidden form elements used to save the number of pumps for a given balloon
-					        frmids_exploded: ['expl1', 'expl2', 'expl3', 'expl4', 'expl5','expl6', 'expl7', 'expl8', 'expl9', 'expl10'], // IDs for hidden form elements used to save whether a balloon exploded
-						onload: myload,         // user-defined function invoked after starting the BART
-						onend:  myend           // user-defined function invoked after finishing the BART
-					      }
-					 } );
-		});
-	
-	//]]>
-	</script>
-    
-	</head>
-	
-	<body>
-<script>
 
-	const modal = document.querySelector('.modal');
+
+				const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.close-modal');
 const btnsOpenModal = document.querySelectorAll('.show-modal');
@@ -87,6 +65,44 @@ const closeModal = () => {
     modal.classList.add('hidden');
     overlay.classList.add('hidden');
 }
+
+btnCloseModal.addEventListener('click',closeModal);
+overlay.addEventListener('click',closeModal);
+
+document.addEventListener('keydown', function(evt) {
+    console.log(evt.key);
+
+    if (evt.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeModal();
+        }
+});
+
+
+
+		
+			// create a BART with 10 balloons
+			$("#bart").bart( { b: 10,                       // create 5 balloons
+					   o: { color: 'green',        // color of balloons
+						earnings: 1,           // points earned for each pump
+						popprob: 20,           // probability of popping; defined as 1 out of popprop
+						onexplode: myexplode   // user-defined function invoked after an explosion
+					      },
+					   s: { frmids_pumps: ['pump1', 'pump2', 'pump3', 'pump4', 'pump5','pump6', 'pump7', 'pump8', 'pump9', 'pump10'],    // IDs for hidden form elements used to save the number of pumps for a given balloon
+					        frmids_exploded: ['expl1', 'expl2', 'expl3', 'expl4', 'expl5','expl6', 'expl7', 'expl8', 'expl9', 'expl10'], // IDs for hidden form elements used to save whether a balloon exploded
+						onload: openModal,         // user-defined function invoked after starting the BART
+						onend:  myend           // user-defined function invoked after finishing the BART
+					      }
+					 } );
+		});
+	
+	//]]>
+	</script>
+    
+	</head>
+	
+	<body>
+<script>
+
 
 </script>
 
