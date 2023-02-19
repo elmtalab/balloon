@@ -23,14 +23,7 @@
 	<script type="text/javascript">
 	//<![CDATA[
 	
-	const openModalResult = function () {
-							modal_result.classList.remove('hidden');
-							overlay_result.classList.remove('hidden');
-						}
-	const closeModalResult = () => {
-					modal_result.classList.add('hidden');
-					overlay_result.classList.add('hidden');
-				}
+	
 		// initialize the BART after the page has loaded
 		$(document).ready(function() {
 		
@@ -59,14 +52,19 @@
 					modal.classList.remove('hidden');
 					overlay.classList.remove('hidden');
 				}
-
-				
-				
-				
 				const closeModal = () => {
 					modal.classList.add('hidden');
 					overlay.classList.add('hidden');
 				}
+
+				const openModalResult = function () {
+							modal_result.classList.remove('hidden');
+							overlay_result.classList.remove('hidden');
+						}
+				const closeModalResult = () => {
+								modal_result.classList.add('hidden');
+								overlay_result.classList.add('hidden');
+							}
 				btnCloseModal.addEventListener('click',closeModal);
 				overlay.addEventListener('click',closeModal);
 				btnCloseModalResult.addEventListener('click',closeModalResult);
