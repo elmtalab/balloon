@@ -17,16 +17,21 @@
         
 	<!-- additional scripts to run the demo on this page -->
 	<script>
+		const modal_result = document.getElementById('#modal_result');
+		const overlay_result = document.getElementById('#overlay_result');
 		const openModalResult = function () {
 					modal_result.classList.remove('hidden');
 					overlay_result.classList.remove('hidden');
 				}
-const closeModalResult = () => {
+		const closeModalResult = () => {
 					modal_result.classList.add('hidden');
 					overlay_result.classList.add('hidden');
 				}
 
 	</script>
+
+
+
 	<script type="text/javascript">
 	//<![CDATA[
 	
@@ -65,8 +70,7 @@ const closeModalResult = () => {
 				const modal = document.getElementById('#modal');
 				const overlay = document.getElementById('#overlay');
 
-				const modal_result = document.getElementById('#modal_result');
-				const overlay_result = document.getElementById('#overlay_result');
+				
 
 				const btnCloseModal = document.querySelector('.close-modal');
 				const btnsOpenModal = document.querySelectorAll('.show-modal');
