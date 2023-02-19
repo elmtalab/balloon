@@ -22,8 +22,15 @@
 
 	<script type="text/javascript">
 	//<![CDATA[
-	
-	
+	const closeModalResult = () => {
+					modal_result.classList.add('hidden');
+					overlay_result.classList.add('hidden');
+				}
+	const openModalResult = function () {
+							modal_result.classList.remove('hidden');
+							overlay_result.classList.remove('hidden');
+						}
+				
 		// initialize the BART after the page has loaded
 		$(document).ready(function() {
 		
@@ -44,32 +51,31 @@
 				const overlay_result = document.getElementById('#overlay_result');
 				
 
-				const btnCloseModal = document.getElementById('#close-modal');
+				const btnCloseModal = document.querySelector('.close-modal');
 				const btnsOpenModal = document.querySelectorAll('.show-modal');
-				const btnCloseModalResult = document.getElementById('#close-modalResult');
-				const btnsOpenModalResult = document.querySelectorAll('.show-modal');
+
 				const openModal = function () {
 					modal.classList.remove('hidden');
 					overlay.classList.remove('hidden');
 				}
+
+				
+				
+				
 				const closeModal = () => {
 					modal.classList.add('hidden');
 					overlay.classList.add('hidden');
 				}
-
-				const openModalResult = function () {
-							modal_result.classList.remove('hidden');
-							overlay_result.classList.remove('hidden');
-						}
-				const closeModalResult = () => {
-								modal_result.classList.add('hidden');
-								overlay_result.classList.add('hidden');
-							}
 				btnCloseModal.addEventListener('click',closeModal);
 				overlay.addEventListener('click',closeModal);
-				btnCloseModalResult.addEventListener('click',closeModalResult);
-				overlay_result.addEventListener('click',closeModalResult);
-				
+
+				document.addEventListener('keydown', function(evt) {
+					console.log(evt.key);
+
+					if (evt.key === 'Escape' && !modal.classList.contains('hidden')) {
+							closeModal();
+						}
+				});
 
 
 
@@ -185,7 +191,7 @@ p {
 
 		</style>
 		<div class="modal " id="#modal">
-      <button class="close-modal" id="close-modal">&times;</button>
+      <button class="close-modal">&times;</button>
       <h1>خوش اومدی 😍</h1>
       <p>
         سلام دوست من
@@ -206,7 +212,7 @@ p {
 
 
 <div class="modal hidden" id="modal_result">
-      <button class="close-modal" id="close-modalResult">&times;</button>
+      <button class="close-modal">&times;</button>
       <h1>خوش اومدی 😍</h1>
 
        <table>
